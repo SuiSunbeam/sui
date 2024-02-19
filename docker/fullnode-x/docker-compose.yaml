@@ -22,12 +22,7 @@ services:
     # populate your local ./fullnode/config/ directory with fullnode.yaml and genesis.blob for the network you want to use.
     volumes:
       - ./fullnode:/opt/sui
-    ports:
-      - 9000
-      - 9184
-      - target: 8084
-        published: 8084
-        protocol: udp
+    network_mode: host
 
   indexer:
     build:
